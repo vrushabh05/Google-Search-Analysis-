@@ -1,41 +1,42 @@
-# 🌐 Google Search Trends Analysis with Python
+# Google Search Trends Analysis with Python
 
-Curious about what the world is searching for? In this project, I analyzed global Google search behavior to understand how interest in trending tech topics changes over time and across countries.
+How does global interest in technology topics change over time and across countries? This notebook pulls data from Google Trends and explores keywords such as "cloud computing", "data science" and "machine learning".
 
-Using real-time data from Google Trends, I explored patterns in keywords like **"cloud computing"**, **"data science"**, and **"machine learning"**, visualizing them with beautiful and interactive plots.
+```mermaid
+flowchart LR
+    A[Keyword list] --> B[pytrends request]
+    B --> C[Top 15 countries by interest]
+    B --> D[12-month interest over time]
+    C --> E[Plotly choropleth world map]
+    D --> F[Trend line chart]
+    D --> G[Keyword comparison]
+```
 
----
+## What the notebook does
 
-## 📌 What This Project Does
+- **Top countries:** ranks the 15 countries searching most for a keyword.
+- **World map:** draws a Plotly choropleth of country-level interest.
+- **Trend over time:** plots interest in a keyword across the last 12 months.
+- **Keyword comparison:** overlays several keywords to compare their trends.
+- **Reusable:** change the keyword list and rerun.
 
-- 📍 **Top Country Insights**: Identifies the top 15 countries searching for a given keyword.
-- 🗺️ **Choropleth Maps**: Visualizes country-wise search interest on a world map using Plotly.
-- 📊 **Trend Over Time**: Plots how interest in a keyword changes over the last 12 months.
-- ⚔️ **Keyword Comparison**: Compares trends for multiple keywords side by side.
-- 🔁 **Reusable Code**: Easily switch keywords to analyze any topic in seconds.
+## Files
 
----
+| File | Purpose |
+|---|---|
+| `Google Search Analysis.ipynb` | The analysis notebook |
+| `Google-Search-Trends-Analysis-Global-Technology-Interest-Patterns.pdf` | Written report |
+| `Global_Search_Trends_Project_Presentation.pptx` | Presentation slides |
 
-## 🛠️ Tools & Libraries
+## Run it
 
-- Python
-- `pytrends` – for accessing Google Trends data
-- `pandas` – data manipulation
-- `matplotlib` & `seaborn` – static visualizations
-- `plotly.express` – interactive visualizations
+```bash
+pip install pytrends pandas matplotlib seaborn plotly jupyter
+jupyter notebook "Google Search Analysis.ipynb"
+```
 
----
+Google Trends values are relative (0 to 100) and change over time, so a fresh run will not match old outputs exactly.
 
-## 📷 Sample Visuals
+## Stack
 
-| Choropleth Map | Keyword Trend |
-|----------------|----------------|
-| ![Map](images/map.png) | ![Trend](images/trend.png) |
-
----
-
-## 🧠 What I Learned
-
-- How to work with live APIs and real-world trend data  
-- Created a full data analysis pipeline – from collection to visualization  
-- Gained insights into global tech interest through clean, meaningful visualizations
+`Python` `pytrends` `pandas` `Matplotlib` `Seaborn` `Plotly`
